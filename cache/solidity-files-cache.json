@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/rahaf/projects/decetralisedVoting/contracts/Voting.sol": {
-      "lastModificationDate": 1713991946696,
-      "contentHash": "0a9d4d851a7fe462064f3f96f70c5f3e",
+      "lastModificationDate": 1713993453962,
+      "contentHash": "018ae4a7357f9a3c7c29989af7baa97f",
       "sourceName": "contracts/Voting.sol",
       "solcConfig": {
         "version": "0.8.0",
