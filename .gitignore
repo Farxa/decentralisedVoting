@@ -1,1 +1,9 @@
 node_modules
+package-lock.json
+artifacts/build-info/4a1182d1356098cd6d30590489c6fd79.json
+artifacts/contracts/Voting.sol/Voting.dbg.json
+artifacts/contracts/Voting.sol/Voting.json
+cache/solidity-files-cache.json
+artifacts/contracts/Voting.sol/Voting.dbg.json
+artifacts/contracts/Voting.sol/Voting.dbg.json
+artifacts/contracts/Voting.sol/Voting.json

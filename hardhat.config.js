@@ -1,10 +1,8 @@
-/** @type import('hardhat/config').HardhatUserConfig */
-
 require("@nomiclabs/hardhat-waffle");
 const Web3 = require("web3");
 
 module.exports = {
-  solidity: "0.8.24",
+  solidity: "0.8.0",
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545",

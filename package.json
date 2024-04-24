@@ -1,18 +1,21 @@
 {
-  "name": "decentralisedvoting",
-  "module": "index.ts",
-  "type": "module",
+  "name": "decetralisedvoting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@nomiclabs/hardhat-waffle": "^2.0.6",
-    "@types/bun": "latest",
     "chai": "^5.1.0",
     "ethereum-waffle": "^4.0.10",
-    "ethers": "^6.12.0",
+    "ethers": "^5.7.2",
     "hardhat": "^2.22.3",
     "web3": "^4.8.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
   }
 }
