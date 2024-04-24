@@ -1,0 +1,18 @@
+{
+  "name": "decentralisedvoting",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@types/bun": "latest",
+    "chai": "^5.1.0",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^6.12.0",
+    "hardhat": "^2.22.3",
+    "web3": "^4.8.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
