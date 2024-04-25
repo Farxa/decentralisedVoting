@@ -1,6 +1,15 @@
 const { Web3 } = require("web3");
 const Voting = require("../artifacts/contracts/Voting.sol/Voting.json");
 
+// Shuffle candidates array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 async function main() {
   const web3 = new Web3("http://127.0.0.1:8545");
   const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
@@ -18,21 +27,28 @@ async function main() {
   const accounts = await web3.eth.getAccounts();
 
   // Get the list of candidates
-  const candidates = await voting.methods.candidates(0).call();
-  console.log("Candidates:", candidates);
+  const candidatesCount = await voting.methods.getCandidatesCount().call();
+  const candidates = [];
+  for (let i = 0; i < candidatesCount; i++) {
+    const candidate = await voting.methods.candidates(i).call();
+    candidates.push(candidate);
+  }
 
-  // Cast votes from each account for each candidate
+  // Shuffle candidates array to randomize the selection
+  const shuffledCandidates = shuffleArray(candidates);
+
   for (const account of accounts) {
-    for (const candidate of candidates) {
-      try {
-        await voting.methods.vote(candidate).send({ from: account });
-        console.log(`Account ${account} voted for ${candidate}`);
-      } catch (error) {
-        console.error(
-          `Error voting for ${candidate} from account ${account}:`,
-          error.message
-        );
-      }
+    // Select a random candidate for the account to vote for
+    const randomCandidate =
+      shuffledCandidates[Math.floor(Math.random() * candidates.length)];
+    try {
+      await voting.methods.vote(randomCandidate).send({ from: account });
+      console.log(`Account ${account} voted for ${randomCandidate}`);
+    } catch (error) {
+      console.error(
+        `Error voting for ${randomCandidate} from account ${account}:`,
+        error.message
+      );
     }
   }
 
